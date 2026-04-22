@@ -11,7 +11,6 @@ En este documento se documentan las pruebas prácticas de seguridad realizadas e
 **Pantalla:** Búsqueda de mascotas (`/buscar`), campo "Buscar mascota por nombre"
 **Resultado:** 
 
-`[PLACEHOLDER — INSERTAR SCREENSHOT DE LA PANTALLA MOSTRANDO "NO SE ENCONTRARON MASCOTAS" CON EL TEXTO INYECTADO EN EL BUSCADOR]`
 
 **Línea que defendió:**
 Archivo: `api/src/routes/mascotas.js`
@@ -28,7 +27,6 @@ El driver `pg` envía el valor como parámetro separado, nunca como parte del SQ
 **Pantalla:** Búsqueda de mascotas (`/buscar`), campo "Buscar mascota por nombre"
 **Resultado:** 
 
-`[PLACEHOLDER — INSERTAR SCREENSHOT DEL TERMINAL MOSTRANDO LA TABLA INTACTA O LA UI SIN ERRORES Y MOSTRANDO RESULTADOS VACIOS]`
 
 **Línea que defendió:**
 Archivo: `api/src/routes/mascotas.js`
@@ -39,7 +37,6 @@ Al igual que en el caso anterior, el uso de Prepared Statements con el driver re
 **Pantalla:** Búsqueda de mascotas (`/buscar`), campo "Buscar mascota por nombre"
 **Resultado:** 
 
-`[PLACEHOLDER — INSERTAR SCREENSHOT MOSTRANDO QUE NO SE EXTRAEN DATOS NO AUTORIZADOS DE OTRAS TABLAS EN EL GRID]`
 
 **Línea que defendió:**
 Archivo: `api/src/routes/mascotas.js`
@@ -55,13 +52,11 @@ El Control de Acceso a Nivel de Fila (RLS) garantiza que aunque dos veterinarios
 - **Sesión Iniciada:** Rol Veterinario, ID: 1
 - **Mascotas Visibles:** Según el registro pivote de la BD, este doctor atiende a mascotas específicas. Por ejemplo, Firulais, Max, Toby.
 
-`[PLACEHOLDER — INSERTAR SCREENSHOT DE LA PANTALLA /buscar MOSTRANDO SESIÓN VETERINARIO ID: 1 Y SÓLO SUS MASCOTAS]`
 
 **Prueba 2: Dra. García (vet_id=2)**
 - **Sesión Iniciada:** Rol Veterinario, ID: 2
 - **Mascotas Visibles:** A pesar de realizar exactamente la misma llamada a la API, la Dra. García ve registros completamente diferentes correspondientes a sus pacientes (ej. Misifú, Luna, Dante).
 
-`[PLACEHOLDER — INSERTAR SCREENSHOT DE LA PANTALLA /buscar MOSTRANDO SESIÓN VETERINARIO ID: 2 Y SÓLO SUS MASCOTAS (DISTINTAS A LAS DEL ID 1)]`
 
 **Por qué ocurre esto:**
 Ocurre gracias a esta política RLS aplicada internamente:
@@ -82,7 +77,6 @@ El Node.js ejecuta `SET LOCAL app.current_vet_id = X` justo antes de enviar la c
 
 **Logs del flujo de caché:**
 
-`[PLACEHOLDER — INSERTAR SCREENSHOT DEL TERMINAL DEL API DONDE SE VEA EL FLUJO DESCRITO ABAJO O COPIAR TUS LOGS REALES]`
 
 *Ejemplo de flujo esperado en logs:*
 ```text
